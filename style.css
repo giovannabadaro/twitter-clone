@@ -1,0 +1,181 @@
+/* 
+anotações: 
+Caso o flex-direction esteja definido como ROW
+align-items         --> ajusta os elementos no eixo Y
+justify-content     --> ajusta os elenento no eixo X
+*/
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+/**colocar em todo inicio das aplicações**/
+button,input{
+    outline: 0;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #e6ecf0;
+    font-family: 'Roboto', sans-serif ;
+    text-rendering: optimizeLegibility !important;           /**melhorar a performance das fonts**/
+    -webkit-font-feature-settings: antialiased !important;
+}
+.content{
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+header#main-header {
+    height: 46px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.25);
+    position: relative;
+    z-index: 1;
+
+}
+header#main-header .content{
+    display: flex;
+    /*flex direction: row or column; --> alinhar os intens horizontalmente ou verticalmente*/
+    align-items: center; /**elementos alinhados verticalmente**/
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 30px;
+}
+header#main-header nav ul{
+    display: flex;
+    list-style: none;    
+}
+header#main-header nav ul li{
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #667580;
+    font-weight: bold;
+    margin-left: 30px;       
+}
+header#main-header nav ul li:first-child{  /** O primeiro item da lista nao precisa de margem*/
+    margin: 0;
+}
+header#main-header nav ul li img{
+    margin-right:7px;
+}
+header#main-header div.side{
+    display: flex;
+}
+header#main-header div.side input{
+    background-color: #f5f8fa;
+    border:solid 1px #e6ecf0;
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 16px;
+    font-size: 14px;
+    color: #667581;
+   /* colocar search de background | background: url('images/search.png');*/
+}
+header#main-header div.side img{
+    border-radius: 50%;
+    margin: 0 15px;    
+}
+header#main-header div.side button{
+    height: 34px;
+    background: #3bb9e3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 90px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    border: 0;
+    border-radius: 16px;
+}
+div.banner{
+    height: 380px;
+    width: 100%;
+    background: #3bb9e3;    
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+}
+div.bar {
+    height:59px ;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);   
+}
+div.bar .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 285px;  
+    height: 100%;  
+}
+div.bar .content ul{
+    display: flex;
+    list-style: none;  
+    height: 100%; 
+}
+div.bar .content ul li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 15px;
+    justify-content: center;
+} 
+div.bar .content ul li.active::after{
+    content:"";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background:#3bb9e3;
+}
+div.bar .content ul li.active strong{
+    color: #3bb9e3;
+
+}
+div.bar .content ul li span{
+    color: #667580;
+    font-size: 12px;
+    font-weight: bold;
+}
+div.bar .content ul li span strong{
+    color: #667580;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 2px;
+}
+div.bar .content .actions {
+    display: flex;
+}
+div.bar .content .actions button{
+    height: 34px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+
+    width: 90px;
+    font-size: 14px;
+    font-weight: bold;
+    color:#3bb9e3;
+    border: 1px solid #3bb9e3;
+    border-radius: 16px;
+
+    margin-right: 20px;
+}
+div.bar .content .actions img{    
+    height: 16px;
+    align-items: center;
+    margin-top: 10px;
+}
